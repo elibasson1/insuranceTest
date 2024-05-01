@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "8db47219-e575-4363-8a1a-800b59490571",
+		"name": "Work",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6602351"
+	},
+	"item": [
+		{
+			"name": "Reset Tickets _ Not Work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/reset",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\": \"Ogen 6 Tirat Carmel\",\r\n  \"nameInsured\": \"TEST 4\",\r\n  \"email\": \"test4411@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/ticket",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ticket by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/ticket/4",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"ticket",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decline Ticket by ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/ticket/4/decline",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"ticket",
+						"4",
+						"decline"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Undecline Ticket by ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/ticket/4/undecline",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"ticket",
+						"4",
+						"undecline"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Ticket Priority by ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"priority\": \"High\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/ticket/4/priority",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"ticket",
+						"4",
+						"priority"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/tickets/",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"tickets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Open Tickets by Priority",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/tickets/statistics",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"tickets",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Hubspot Card by CRM ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/hubspot/1",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"hubspot",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All hubspot",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/hubspot",
+					"protocol": "https",
+					"host": [
+						"sandbox-api-falcon",
+						"honeycombinsurance",
+						"com"
+					],
+					"path": [
+						"open-for-test",
+						"hubspot"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
