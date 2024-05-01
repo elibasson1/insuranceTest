@@ -42,3 +42,12 @@ def ticket_missing_name_insured():
         "email": email
     }
     return ticket_data
+
+
+def duplicate_mail(email):
+    ticket_data = {
+        "address": "Haifa",
+        "nameInsured": "TEST 1",
+        "email": email
+    }
+    return ticket_data
