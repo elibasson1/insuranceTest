@@ -18,23 +18,17 @@ class Test_ticket(ticket):
         response_get_ticket = self.get_ticket_by_id(Test_ticket.ticket_id)
         assert response_get_ticket.status_code == 200
 
+        retrieve_ticket = response_get_ticket.json()
         # Check if the retrieved ticket matches the created ticket data
-        assert response_get_ticket.json()["address"] == ticket_information["address"]
-        assert response_get_ticket.json()["nameInsured"] == ticket_information["nameInsured"]
-        assert response_get_ticket.json()["email"] == ticket_information["email"]
-        # Checking if the status of the created ticket is open
-        assert response_get_ticket.json()["status"] == "open"
+        assert retrieve_ticket["address"] == ticket_information["address"]
+        assert retrieve_ticket["nameInsured"] == ticket_information["nameInsured"]
+        assert retrieve_ticket["email"] == ticket_information["email"]
+        assert retrieve_ticket["status"] == "open"
 
-        email = response_get_ticket.json()["email"]
+        email = retrieve_ticket["email"]
         ticket_information = duplicate_mail(email)
 
         # Check duplicate mail
         response_create_ticket = self.create_ticket(ticket_information)
         assert response_create_ticket.status_code == 400
         assert response_create_ticket.json()["message"] == "ticket for this email already exists"
-
-
-
-
-
-
