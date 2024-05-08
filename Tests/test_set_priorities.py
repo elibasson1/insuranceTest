@@ -30,18 +30,17 @@ class Test_ticket(ticket):
 
         # Check priority High Low, Medium
         for priority in valid_priorities:
-            set_priority_high = self.set_ticket_priority_by_id(Test_ticket.ticket_id, priority)
-            assert set_priority_high.status_code == 200
-            assert set_priority_high.json()["priority"] == priority
+            set_priority = self.set_ticket_priority_by_id(Test_ticket.ticket_id, priority)
+            assert set_priority.status_code == 200
+            assert set_priority.json()["priority"] == priority
 
         priority = "wrong"
-        set_priority_high = self.set_ticket_priority_by_id(Test_ticket.ticket_id, priority)
-        assert set_priority_high.status_code == 500
-        assert set_priority_high.json()["message"] == (f"Unknown priority provided: {priority}, allowed values:  Low, "
-                                                       f"Medium, High")
+        set_priority = self.set_ticket_priority_by_id(Test_ticket.ticket_id, priority)
+        assert set_priority.status_code == 500
+        assert set_priority.json()["message"] == (f"Unknown priority provided: {priority}, allowed values:  Low, "
+                                                  f"Medium, High")
         priority = "High"
         id_does_not_exist = -1
-        set_priority_high = self.set_ticket_priority_by_id(id_does_not_exist, priority)
-        assert set_priority_high.status_code == 404
-        assert set_priority_high.json()["message"] == f"no ticket found by ID {id_does_not_exist}"
-
+        set_priority = self.set_ticket_priority_by_id(id_does_not_exist, priority)
+        assert set_priority.status_code == 404
+        assert set_priority.json()["message"] == f"no ticket found by ID {id_does_not_exist}"
