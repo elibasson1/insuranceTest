@@ -2,55 +2,55 @@ import requests
 
 
 class ticket:
-    base_url = "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/"
+    baseUrl = "https://sandbox-api-falcon.honeycombinsurance.com/open-for-test/"
 
     # Function to reset tickets
     def reset(self):
-        response = requests.get(f"{self.base_url}/reset")
+        response = requests.get(f"{self.baseUrl}/reset")
         return response
 
     # Function to create a ticket
-    def create_ticket(self, data):
-        response = requests.post(f"{self.base_url}/ticket", json=data)
+    def createTicket(self, data):
+        response = requests.post(f"{self.baseUrl}/ticket", json=data)
         return response
 
     # Function to get ticket by ID
-    def get_ticket_by_id(self, ticket_id):
-        response = requests.get(f"{self.base_url}/ticket/{ticket_id}")
+    def getTicketById(self, ticketId):
+        response = requests.get(f"{self.baseUrl}/ticket/{ticketId}")
         return response
 
     # Function to decline a ticket by ID
-    def decline_ticket(self, ticket_id):
-        response = requests.post(f"{self.base_url}/ticket/{ticket_id}/decline")
+    def declineTicket(self, ticketId):
+        response = requests.post(f"{self.baseUrl}/ticket/{ticketId}/decline")
         return response
 
     # Function to undecline a ticket by ID
-    def undecline_ticket(self, ticket_id):
-        response = requests.post(f"{self.base_url}/ticket/{ticket_id}/undecline")
+    def undeclineTicket(self, ticketId):
+        response = requests.post(f"{self.baseUrl}/ticket/{ticketId}/undecline")
         return response
 
     # Function to set ticket priority by ID
-    def set_ticket_priority_by_id(self, ticket_id, priority):
+    def set_ticket_priority_by_id(self, ticketId, priority):
         data = {
             "priority": priority
         }
-        response = requests.post(f"{self.base_url}/ticket/{ticket_id}/priority", json=data)
+        response = requests.post(f"{self.baseUrl}/ticket/{ticketId}/priority", json=data)
         return response
 
     # Function to get all tickets
     def get_all_tickets(self):
-        response = requests.get(f"{self.base_url}/tickets")
+        response = requests.get(f"{self.baseUrl}/tickets")
         return response
 
     # Function to get open tickets by priority
     def get_open_tickets_by_priority(self):
-        response = requests.get(f"{self.base_url}/tickets/statistics")
+        response = requests.get(f"{self.baseUrl}/tickets/statistics")
         return response
 
-    def get_hubspot_card_by_crm_id(self, ticket_id):
-        response = requests.get(f"{self.base_url}/hubspot/{ticket_id}")
+    def get_hubspot_card_by_crm_id(self, ticketId):
+        response = requests.get(f"{self.baseUrl}/hubspot/{ticketId}")
         return response
 
     def get_all_hubspot(self):
-        response = requests.get(f"{self.base_url}/hubspot")
+        response = requests.get(f"{self.baseUrl}/hubspot")
         return response
