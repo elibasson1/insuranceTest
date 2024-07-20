@@ -1,0 +1,21 @@
+db.Tickets.aggregate([
+    {
+        "$match": {
+            "status": "open"
+        }
+    },
+    {
+        "$group": {
+            "_id": "$priority",
+            "totalTickets": { "$sum": 1 }
+        }
+    },
+    {
+        "$project": {
+            "priority": "$_id",
+            "totalTickets": 1,
+            "_id": 0
+        }
+    }
+])
+

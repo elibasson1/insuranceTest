@@ -11,7 +11,7 @@ class Test_ticket(ticket):
         assert response_get_tickets.status_code == 200
 
         # Pretty printed data
-        # json_data = response_get_tickets.text
-        # obj = json.loads(json_data)
-        # json_formatted_str = json.dumps(obj, indent=2)
-        # print(json_formatted_str)
+        json_data = response_get_tickets.text
+        obj = json.loads(json_data)
+        json_formatted_str = json.dumps(obj, indent=2)
+        print(json_formatted_str)
