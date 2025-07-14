@@ -24,7 +24,7 @@ class ticket:
         response = requests.post(f"{self.baseUrl}/ticket/{ticketId}/decline")
         return response
 
-    # Function to undecline a ticket by ID
+    # Function to underline a ticket by ID
     def undeclineTicket(self, ticketId):
         response = requests.post(f"{self.baseUrl}/ticket/{ticketId}/undecline")
         return response
